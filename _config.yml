@@ -1,0 +1,9 @@
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+# data charting
+datachart:
+        dimensions:
+                   width: 750
+                   height: 200
