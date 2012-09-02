@@ -1,6 +1,6 @@
 # Jekyll Datachart
 
-Jekyll Datachart is my first own jekyll plugin for octopress. You can easily embed data charts with your pace and elevation from your running or cycling tracks.
+Jekyll Datachart is my first own jekyll plugin for octopress. You can easily embed data charts with pace and elevation that you recorded in a tcx-file (gpx, kml later?).
 
 ##How it works
 
@@ -17,15 +17,15 @@ To use this plugin you need coffeescript, add it to your Gemfile
 
 Then update your bundle
 
-	bundle update
+	bundle
 
-Second, you need Highcharts JS (Free for Non-commercial)
+Second, you need Highcharts JS (Free for non-commercial)
 
 	http://www.highcharts.com/
 
-Put the highcharts.js at your javascripts directory.
+Put the highcharts.js into your 'source/javascripts' directory.
 	
-Put the contents of 'plugins' in your 'plugins' directory and the contents of 'source' in your 'source' directory (just copy the directories if you don't have those directories yet).
+Put the contents of 'plugins' in your 'source/plugins' directory and the contents of 'source' in your 'source' directory (just copy the directories if you don't have those directories yet).
 	
 Put the following configuration in your _config.yml
 
@@ -75,7 +75,7 @@ Optionally, you can specify the width and height:
     
     {% render_datachart 500,500 %}
 
-## What's next
+## What's next ?
 
 * More formats: gpx and kml
 * Any more ideas? ... 
