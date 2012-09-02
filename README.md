@@ -15,9 +15,13 @@ To use this plugin you need coffeescript, add it to your Gemfile
 	  gem 'coffee-script', '~> 2.2.0'
 	end
 
+Then update your bundle
+
+	bundle update
+
 Put the contents of 'plugins' in your 'plugins' directory and the contents of 'source' in your 'source' directory (just copy the directories if you don't have those directories yet).
 	
-Put the following configuration in yout _config.yml
+Put the following configuration in your _config.yml
 
 	# data charting
 	datachart:
@@ -70,8 +74,6 @@ Optionally, you can specify the width and height:
 * More formats: gpx and kml
 * Any more ideas? ... 
 
-## Use it with your own risk.
-
 ## License and copyright
 
 Copyright 2012 Jan Karger
@@ -90,3 +92,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Use it with your own risk.
+==========================
