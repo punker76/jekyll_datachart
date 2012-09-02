@@ -19,6 +19,12 @@ Then update your bundle
 
 	bundle update
 
+Second, you need Highcharts JS (Free for Non-commercial)
+
+	http://www.highcharts.com/
+
+Put the highcharts.js at your javascripts directory.
+	
 Put the contents of 'plugins' in your 'plugins' directory and the contents of 'source' in your 'source' directory (just copy the directories if you don't have those directories yet).
 	
 Put the following configuration in your _config.yml
