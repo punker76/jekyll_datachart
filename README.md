@@ -1,6 +1,6 @@
 # Jekyll Datachart
 
-Jekyll Datachart is my first own jekyll plugin for octopress. You can easily embed data charts with pace and elevation that you recorded in a tcx-file (gpx, kml later?).
+Jekyll Datachart is my first own jekyll plugin for octopress. You can easily embed data charts with pace, elevation and heart rate that you recorded in a data file (tcx, slf, gpx and kml later?).
 
 ##How it works
 
@@ -65,7 +65,7 @@ Set the relevant values in your pages and posts (first version of this plugin un
 	datachart:
 		files:
 			- http://yourfirstfile.tcx
-			- http://yoursecondfile.tcx
+			- http://yoursecondfile.slf
 
 Include the render_datachart tag in your posts:
 
@@ -74,6 +74,11 @@ Include the render_datachart tag in your posts:
 Optionally, you can specify the width and height:
     
     {% render_datachart 500,500 %}
+
+## Supported data files
+
+* tcx: Training Center Database XML by Garmin
+* slf: SIGMA SLF file from SIGMA DATA CENTER 2.x
 
 ## What's next ?
 
