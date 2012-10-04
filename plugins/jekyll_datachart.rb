@@ -28,7 +28,7 @@ module Jekyll
 				i = 0
 				files = context['page']['datachart']['files']
 				files.each { |file|
-				  div = "<div id=\"container_#{i}_#{id}\" class=\"container\" style=\"width: #{@width}px; height: #{@height}px; margin-top: 5px; margin-bottom: 5px; \" data-files=\"#{file.to_s}\" ></div>"
+				  div = "<div id=\"container_#{i}_#{id}\" class=\"container\" style=\"max-width: #{@width}px; height: #{@height}px; margin-top: 5px; margin-bottom: 5px; \" data-files=\"#{file.to_s}\" ></div>"
 				  o += div
 				  i += 1
 				}
