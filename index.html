@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Jekyll datachart by punker76</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Jekyll datachart</h1>
+          <h2>Embed data charts with pace, elevation and heart rate that you recorded in a data file (tcx, slf, gpx and kml later?) in your octopress blog.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/punker76/jekyll_datachart/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/punker76/jekyll_datachart/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/punker76/jekyll_datachart" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>Jekyll Datachart</h1>
+
+<p>Jekyll Datachart is my first own jekyll plugin for octopress. You can easily embed data charts with pace, elevation and heart rate that you recorded in a data file (tcx, slf, gpx and kml later?).</p>
+
+<h2>How it works</h2>
+
+<h1>Installation / Configuration</h1>
+
+<p>To use this plugin you need coffeescript, add it to your Gemfile</p>
+
+<pre><code>source "http://rubygems.org"
+
+group :development do
+  gem 'coffee-script', '~&gt; 2.2.0'
+end
+</code></pre>
+
+<p>Then update your bundle</p>
+
+<pre><code>bundle
+</code></pre>
+
+<p>Second, you need Highcharts JS (Free for non-commercial)</p>
+
+<pre><code>http://www.highcharts.com/
+</code></pre>
+
+<p>Put the highcharts.js into your 'source/javascripts' directory.</p>
+
+<p>Put the contents of 'plugins' in your 'source/plugins' directory and the contents of 'source' in your 'source' directory (just copy the directories if you don't have those directories yet).</p>
+
+<p>Put the following configuration in your _config.yml</p>
+
+<pre><code># data charting
+datachart:
+        dimensions:
+                   width: 750
+                   height: 200
+</code></pre>
+
+<p>Include {% include jekyll_datachart.html %} in your head.html</p>
+
+<pre><code>&lt;head&gt;
+    ...
+
+    {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
+    &lt;link rel="canonical" href="{{ canonical }}"&gt;
+    &lt;link href="{{ root_url }}/favicon.png" rel="icon"&gt;
+    &lt;link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"&gt;
+
+    {% include jekyll_datachart.html %}
+
+    &lt;script src="{{ root_url }}/javascripts/modernizr-2.0.js"&gt;&lt;/script&gt;
+    &lt;script src="{{ root_url }}/javascripts/ender.js"&gt;&lt;/script&gt;
+    &lt;script src="{{ root_url }}/javascripts/octopress.js" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml"&gt;
+    {% include custom/head.html %}
+    {% include google_analytics.html %}
+
+    ...
+&lt;/head&gt;
+</code></pre>
+
+<h1>Usage</h1>
+
+<p>Set the relevant values in your pages and posts (first version of this plugin understands only tcx files, next verson understands gpx and kml too):</p>
+
+<pre><code>datachart:
+    files:
+        - http://yourfirstfile.tcx
+        - http://yoursecondfile.slf
+</code></pre>
+
+<p>Include the render_datachart tag in your posts:</p>
+
+<pre><code>{{% render_datachart %}
+</code></pre>
+
+<p>Optionally, you can specify the width and height:</p>
+
+<pre><code>{% render_datachart 500,500 %}
+</code></pre>
+
+<h2>Supported data files</h2>
+
+<ul>
+<li>tcx: Training Center Database XML by Garmin</li>
+<li>slf: SIGMA SLF file from SIGMA DATA CENTER 2.x</li>
+</ul><h2>What's next ?</h2>
+
+<ul>
+<li>More formats: gpx and kml</li>
+<li>Any more ideas? ... </li>
+</ul><h2>License and copyright</h2>
+
+<p>Copyright (c) 2012 Jan Karger</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p>See <a href="http://opensource.org/licenses/MIT/">http://opensource.org/licenses/MIT/</a>.</p>
+
+<h1>Use it with your own risk.</h1>
+        </section>
+
+        <footer>
+          Jekyll datachart is maintained by <a href="https://github.com/punker76">punker76</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-34351005-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>
